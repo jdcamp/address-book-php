@@ -27,7 +27,7 @@
     });
 
     $app->post("/view" , function() use ($app) {
-      return $app["twig"]->render("create_contact.html.twig");
+      return $app["twig"]->render("address_book.html.twig" , array("view_address_book" => Contact::getAll()));
     });
 
     $app->post("/add_contact" , function() use ($app) {
@@ -36,14 +36,6 @@
       return $app["twig"]->render("save_confirmation.html.twig", array("save_contact" => $new_contact));
     });
 
-
-
-
-
     return $app;
-
-
-
-
 
  ?>
