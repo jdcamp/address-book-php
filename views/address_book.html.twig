@@ -13,14 +13,14 @@
   <div class="container card-size">
     <h4>Address Book</h4>
     <form class="" action="/add" method="post">
-      <button type="submit" name="add" class="btn center-align">Add Contact</button>
+      <button type="submit" name="add" class="btn center-align">Add A Contact</button>
     </form>
     {% if view_address_book is not empty %}
       {% for new_contact in view_address_book %}
 
         <div class="card hoverable">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="format-img" src="{{new_contact.getImage}}" alt="Image not found" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/en/1/13/Stick_figure.png';" />
+            <img class="format-img" src="{{new_contact.getImage}}" alt="Image not found" onerror="this.onerror=null;this.src='http://style.anu.edu.au/_anu/4/images/placeholders/person_8x10.png';" />
           </div>
 
           <div class="card-content">

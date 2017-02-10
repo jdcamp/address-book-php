@@ -26,9 +26,6 @@
       return $app["twig"]->render("create_contact.html.twig");
     });
 
-    $app->post("/view" , function() use ($app) {
-      return $app["twig"]->render("address_book.html.twig" , array("view_address_book" => Contact::getAll()));
-    });
     $app->post("/delete" , function() use ($app) {
       Contact::clearAddressBook();
       return $app["twig"]->render("delete_contacts.html.twig" , array("view_address_book" => Contact::getAll()));

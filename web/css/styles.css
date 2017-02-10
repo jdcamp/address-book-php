@@ -1,4 +1,7 @@
 .card-size {
-  width: 480px;
-  height: auto;
+  width: 350px;
+}
+
+body {
+  background-color: snow;
 }
