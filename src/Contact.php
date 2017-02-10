@@ -6,8 +6,9 @@ class Contact {
   private $phoneNumber;
 
 
-  function __construct($myName, $myAddress, $myPhoneNumber) {
-    $this->name = $myName;
+  function __construct($myFirstName, $myLastName, $myAddress, $myPhoneNumber) {
+    $this->firstName = $myFirstName;
+    $this->lastName = $myLastName;
     $this->address = $myAddress;
     $this->phoneNumber = $myPhoneNumber;
   }
@@ -37,11 +38,23 @@ class Contact {
   }
 
   function getAddress() {
-    return $this->Address;
+    return $this->address;
   }
 
   function getPhoneNumber() {
     return $this->phoneNumber;
+  }
+
+  function save() {
+    array_push($_SESSION['address_book'], $this);
+  }
+
+  static function getAll() {
+    return $_SESSION['address_book'];
+  }
+
+  static function clearAddressBook() {
+    $_SESSION['address_book'] = array();
   }
 
 

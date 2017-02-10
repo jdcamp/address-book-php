@@ -26,6 +26,16 @@
       return $app["twig"]->render("create_contact.html.twig");
     });
 
+    $app->post("/view" , function() use ($app) {
+      return $app["twig"]->render("create_contact.html.twig");
+    });
+
+    $app->post("/add_contact" , function() use ($app) {
+      $new_contact = new Contact($_POST['first-name'], $_POST['last-name'], $_POST['address'], $_POST['phone-number']);
+      $new_contact->save();
+      return $app["twig"]->render("save_confirmation.html.twig", array("save_contact" => $new_contact));
+    });
+
 
 
 
