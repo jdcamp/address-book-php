@@ -11,28 +11,37 @@ Case | Input | Output
 displays name given by user | Mr. foo | Mr. foo
 displays address given by user | 123 Main St | 123 Main St
 displays phone number given by user | 111-222-3333 | 111-222-3333
+User can delete all contacts | on click of delete button | all contacts are deleted
 
 ## Setup/Installation Requirements
 
-* _ _
 
-
-_ _
+*REQUIRES COMPOSER AND PHP TO BE INSTALLED ON YOUR COMPUTER
+* _Clone repo_
+* _In terminal cd to root folder_
+* _In terminal enter the follow in terminal and press enter: composer install_
+* _In terminal cd to web folder_
+* _In terminal enter the follow in terminal and press enter: php -S localhost:8000_
+* _In browser enter the following into the address bar and press enter: localhost:8000_
 
 ## Known Bugs
 
-__
+_None at the moment_
 
 ## Support and contact details
 
-_ _
+_Support and contact info pending_
 
 ## Technologies Used
 
-_ _
+*_Silex_
+*_Twig_
+*_jQuery_
+*_php_
+*_materialize_
 
 ### License
 
-*Mit Licensing*
+*MIT Licensing applies*
 
-Copyright (c) 2016 **_Jake Campa_**
+Copyright © 2017 **_Jake Campa_**
