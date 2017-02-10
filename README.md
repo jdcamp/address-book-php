@@ -34,11 +34,11 @@ _Support and contact info pending_
 
 ## Technologies Used
 
-*_Silex_
-*_Twig_
-*_jQuery_
-*_php_
-*_materialize_
+* _Silex_
+* _Twig_
+* _jQuery_
+* _php_
+* _materialize_
 
 ### License
 
