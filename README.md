@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _Address Book_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A simple address book}, 2/9/2017_
 
-#### By _**{List of contributors}**_
+#### By _**Jake Campa**_
 
 ## Specs
 
@@ -10,11 +10,11 @@ Case | Input | Output
 --- | --- | ---
 displays name given by user | Mr. foo | Mr. foo
 displays address given by user | 123 Main St | 123 Main St
-displays phone number given by user | 111-222-3333 | Mr. foo
+displays phone number given by user | 111-222-3333 | 111-222-3333
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
+* _ _
 
 
 _ _
@@ -35,4 +35,4 @@ _ _
 
 *Mit Licensing*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2016 **_Jake Campa_**
