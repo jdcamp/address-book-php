@@ -10,10 +10,33 @@
 </head>
 
 <body>
-  <div class="container">
-    <h4>Everyone you know is gone. Congratulation!</h4>
-    <a href="/"><button type="button" name="back" class="btn">Back</button></a>
+  <div class="container card-size">
+    <h4>Address Book</h4>
+    <form class="" action="/add" method="post">
+      <button type="submit" name="add" class="btn center-align">Add Contact</button>
+    </form>
+    {% if view_address_book is not empty %}
+      {% for new_contact in view_address_book %}
 
+        <div class="card hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="format-img" src="{{new_contact.getImage}}" alt="Image not found" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/en/1/13/Stick_figure.png';" />
+          </div>
+
+          <div class="card-content">
+            <span class="card-title activator black-text text-darken-4 btn-flat">{{new_contact.getLastName}}, {{new_contact.getFirstName}} <i class="material-icons right">perm_identity</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title black-text text-darken-4">{{new_contact.getLastName}}, {{new_contact.getFirstName}}<i class="material-icons right">close</i></span>
+            <p><i class="material-icons">location_on</i> Address: {{new_contact.getAddress}}</p>
+            <p><i class="material-icons">contact_phone</i> Phone Number: {{new_contact.getPhoneNumber}}</p>
+          </div>
+        </div>
+      {%endfor%}
+      <form  action="/delete" method="post">
+        <button type="submit" action="/delete" method="post" name="delete" class="btn red">DELETE ALL CONTACTS</button>
+      </form>
+    {%endif%}
   </div>
 </body>
 

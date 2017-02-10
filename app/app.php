@@ -19,7 +19,7 @@
     $app['debug'] = true;
 
     $app->get("/" , function() use ($app) {
-      return $app["twig"]->render("selector_page.html.twig" ,array("view_address_book" => Contact::getAll()));
+      return $app["twig"]->render("address_book.html.twig" ,array("view_address_book" => Contact::getAll()));
     });
 
     $app->post("/add" , function() use ($app) {
@@ -27,11 +27,11 @@
     });
 
     $app->post("/view" , function() use ($app) {
-      return $app["twig"]->render("selector_page.html.twig" , array("view_address_book" => Contact::getAll()));
+      return $app["twig"]->render("address_book.html.twig" , array("view_address_book" => Contact::getAll()));
     });
     $app->post("/delete" , function() use ($app) {
       Contact::clearAddressBook();
-      return $app["twig"]->render("address_book.html.twig" , array("view_address_book" => Contact::getAll()));
+      return $app["twig"]->render("delete_contacts.html.twig" , array("view_address_book" => Contact::getAll()));
     });
 
     $app->post("/add_contact" , function() use ($app) {
