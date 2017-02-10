@@ -1,29 +1,19 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   <title>Address Book</title>
 </head>
 
 <body>
   <div class="container">
-    <form class="" action="/delete" method="post">
-      <a href="/"><button type="button" name="button" class="btn btn-info">Back</button></a>
-      <button type="submit" action="/delete" method="post" name="delete" class="btn btn-danger">DELETET ALL CONTACTS</button>
-    </form>
-    {% if view_address_book is not empty %}
-      {% for new_contact in view_address_book %}
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3>{{new_contact.getLastName}}, {{new_contact.getFirstName}}</h3>
-          </div>
-          <div class="panel-body">
-            <p>Address: <br>{{new_contact.getAddress}}</p>
-            <p>Phone Number: <br>{{new_contact.getPhoneNumber}}</p>
-          </div>
-        </div>
-      {%endfor%}
-    {%endif%}
+    <h4>Everyone you know is gone. Congratulation!</h4>
+    <a href="/"><button type="button" name="back" class="btn">Back</button></a>
+
   </div>
 </body>
 

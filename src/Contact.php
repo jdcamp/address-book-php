@@ -4,13 +4,16 @@ class Contact {
   private $lastName;
   private $address;
   private $phoneNumber;
+  private $imageURL;
 
 
-  function __construct($myFirstName, $myLastName, $myAddress, $myPhoneNumber) {
+
+  function __construct($myFirstName, $myLastName, $myAddress, $myPhoneNumber, $myImage) {
     $this->firstName = $myFirstName;
     $this->lastName = $myLastName;
     $this->address = $myAddress;
     $this->phoneNumber = $myPhoneNumber;
+    $this->imageURL = $myImage;
   }
 
   function setFirstName($myFirstName) {
@@ -28,6 +31,9 @@ class Contact {
   function setPhoneNumber($myPhoneNumber) {
     $this->phoneNumber = $myPhoneNumber;
   }
+  function setImage($myImage) {
+    $this->imageURL = $myImage;
+  }
 
   function getFirstName() {
     return $this->firstName;
@@ -44,17 +50,20 @@ class Contact {
   function getPhoneNumber() {
     return $this->phoneNumber;
   }
+  function getImage() {
+    return $this->imageURL;
+  }
 
   function save() {
-    array_push($_SESSION['address_book'], $this);
+    array_push($_SESSION['list_of_contacts'], $this);
   }
 
   static function getAll() {
-    return $_SESSION['address_book'];
+    return $_SESSION['list_of_contacts'];
   }
 
   static function clearAddressBook() {
-    $_SESSION['address_book'] = array();
+    $_SESSION['list_of_contacts'] = array();
   }
 
 

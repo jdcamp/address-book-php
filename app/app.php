@@ -6,8 +6,8 @@
 
     session_start();
 
-    if(empty($_SESSION['address_book'])) {
-      $_SESSION['address_book'] = array();
+    if(empty($_SESSION['list_of_contacts'])) {
+      $_SESSION['list_of_contacts'] = array();
     }
 
     $app = new Silex\Application();
@@ -19,7 +19,7 @@
     $app['debug'] = true;
 
     $app->get("/" , function() use ($app) {
-      return $app["twig"]->render("selector_page.html.twig");
+      return $app["twig"]->render("selector_page.html.twig" ,array("view_address_book" => Contact::getAll()));
     });
 
     $app->post("/add" , function() use ($app) {
@@ -27,7 +27,7 @@
     });
 
     $app->post("/view" , function() use ($app) {
-      return $app["twig"]->render("address_book.html.twig" , array("view_address_book" => Contact::getAll()));
+      return $app["twig"]->render("selector_page.html.twig" , array("view_address_book" => Contact::getAll()));
     });
     $app->post("/delete" , function() use ($app) {
       Contact::clearAddressBook();
@@ -35,7 +35,7 @@
     });
 
     $app->post("/add_contact" , function() use ($app) {
-      $new_contact = new Contact($_POST['first-name'], $_POST['last-name'], $_POST['address'], $_POST['phone-number']);
+      $new_contact = new Contact($_POST['first-name'], $_POST['last-name'], $_POST['address'], $_POST['phone-number'], $_POST['image']);
       $new_contact->save();
       return $app["twig"]->render("save_confirmation.html.twig", array("save_contact" => $new_contact));
     });
