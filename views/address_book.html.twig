@@ -7,7 +7,10 @@
 
 <body>
   <div class="container">
-    <a href="/"><button type="button" name="button" class="btn btn-info">Back</button></a>
+    <form class="" action="/delete" method="post">
+      <a href="/"><button type="button" name="button" class="btn btn-info">Back</button></a>
+      <button type="submit" action="/delete" method="post" name="delete" class="btn btn-danger">DELETET ALL CONTACTS</button>
+    </form>
     {% if view_address_book is not empty %}
       {% for new_contact in view_address_book %}
         <div class="panel panel-default">

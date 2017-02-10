@@ -29,6 +29,10 @@
     $app->post("/view" , function() use ($app) {
       return $app["twig"]->render("address_book.html.twig" , array("view_address_book" => Contact::getAll()));
     });
+    $app->post("/delete" , function() use ($app) {
+      Contact::clearAddressBook();
+      return $app["twig"]->render("address_book.html.twig" , array("view_address_book" => Contact::getAll()));
+    });
 
     $app->post("/add_contact" , function() use ($app) {
       $new_contact = new Contact($_POST['first-name'], $_POST['last-name'], $_POST['address'], $_POST['phone-number']);
